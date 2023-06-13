@@ -16,12 +16,51 @@
   }
 }
 
+/*  */
+.default-btn {
+  @apply text-white bg-transBlack rounded-md px-2;
+}
+.default-btn:hover {
+  @apply bg-black;
+}
+.default-btn:active {
+  @apply bg-gray-950;
+}
+
+.primary-btn {
+  @apply bg-slate-300 text-black shadow-sm px-2 rounded-md;
+}
+.primary-btn:hover {
+  @apply bg-slate-400;
+}
+.primary-btn:active {
+  @apply bg-slate-500;
+}
+
+.secondary-btn {
+  @apply text-white bg-[#e159f8] rounded-md px-2;
+}
+.secondary-btn:hover {
+  @apply bg-[#9c27b0];
+}
+.secondary-btn:active {
+  @apply bg-[#dc5df1];
+}
+
+a.primary-link {
+  @apply border border-gray-50 rounded-md no-underline bg-transparent text-gray-50 px-2 hover:text-gray-200 shadow-md;
+}
+a.default-link {
+  @apply no-underline bg-transparent text-gray-50 px-2 hover:text-gray-200 shadow-sm py-1 border-b border-transparent hover:border-blue-50;
+}
 body {
-  color: rgb(var(--foreground-rgb));
+  padding: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }

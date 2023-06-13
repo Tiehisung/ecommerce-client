@@ -1,0 +1,11 @@
+.navMain{
+    display: flex;
+    padding: 4px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10vw;
+}
+.linksDiv{
+    display: flex;
+    gap: 12px;
+}
