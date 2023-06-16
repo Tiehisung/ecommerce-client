@@ -6,6 +6,43 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /* Text preferred */
+  --primary-dark: #222;
+  --prim-color-dark-hover: rgba(0, 0, 0, 0.804);
+
+  --second-color-light: white;
+  --second-color-hover-hover: white;
+
+  --tert-color-gray: grayText;
+  --tert-color-gray-hover: grayText;
+
+  /* outline colors */
+  --outline-color: rgba(173, 216, 230, 0.419);
+  --btn-outline-color: rgb(129, 168, 252);
+
+  /* background colors */
+  --primary-trans-dark: rgba(0, 0, 0, 0.719) 000;
+  --second-trans-dark: rgba(0, 0, 0, 0.883) 000;
+  --tertiary-trans-dark: rgba(0, 0, 0, 0.618) 000;
+
+  --primary-violet: #cf65ec;
+  --second-violet: #d66bf3;
+  --tertiary-violet: #d65ef7;
+
+  --primary-green: #1efcc5b7;
+  --second-green: #21f0bcb7;
+  --tertiary-green: #2cffcab7;
+
+  /* placeholder */
+  --placeholder-color1: gray;
+  --placeholder-color2: rgb(177, 176, 176);
+
+  /* container backcolors */
+  --cont-backlightgray1: rgb(241 243 244);
+  --cont-backlightgray2: rgb(207 207 207);
+  --cont-backwhite: white;
+  --cont-backblue: blue;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,45 +53,130 @@
   }
 }
 
-/*  */
-.default-btn {
-  @apply text-white bg-transBlack rounded-md px-2;
-}
-.default-btn:hover {
-  @apply bg-black;
-}
-.default-btn:active {
-  @apply bg-gray-950;
-}
-
+/* Buttons */
 .primary-btn {
-  @apply bg-slate-300 text-black shadow-sm px-2 rounded-md;
+  border: solid 2px transparent;
+  @apply bg-primaryViolet rounded-[6px] text-white px-[6px] py-[2px];
+  transition: all 200ms ease;
 }
 .primary-btn:hover {
-  @apply bg-slate-400;
+  @apply bg-secondViolet outline-btnOutlineColor outline-4;
 }
 .primary-btn:active {
-  @apply bg-slate-500;
+  @apply bg-tertiaryViolet outline-btnOutlineColor outline-4 opacity-90;
 }
 
-.secondary-btn {
-  @apply text-white bg-[#e159f8] rounded-md px-2;
+.second-btn {
+  @apply bg-green-500 rounded-md text-white  px-[6px] py-[2px] border;
+  transition: all 200ms ease-in;
 }
-.secondary-btn:hover {
-  @apply bg-[#9c27b0];
+.second-btn:hover {
+  @apply bg-green-400;
 }
-.secondary-btn:active {
-  @apply bg-[#dc5df1];
+.second-btn:active {
+  @apply bg-green-600;
 }
 
+.default-btn {
+  @apply bg-gray-500 rounded-md text-white  px-[6px] py-[2px] border;
+  transition: all 200ms ease-in;
+}
+.default-btn:hover {
+  @apply bg-gray-400;
+}
+.default-btn:active {
+  @apply bg-gray-600;
+}
+
+/* DELETE  */
+.prim-delete-btn {
+  @apply bg-gray-50 rounded-md text-red-800  px-[6px] py-[2px] border;
+  transition: all 200ms ease-in;
+}
+.prim-delete-btn:hover {
+  @apply bg-white text-red-600;
+}
+.prim-delete-btn:active {
+  @apply bg-gray-200 text-red-500;
+}
+
+.second-delete-btn {
+  @apply bg-red-500 rounded-md text-white  px-[6px] py-[2px] border;
+  transition: all 200ms ease-in;
+}
+.second-delete-btn:hover {
+  @apply bg-red-600;
+}
+.second-delete-btn:active {
+  @apply bg-red-300;
+}
 a.primary-link {
   @apply border border-gray-50 rounded-md no-underline bg-transparent text-gray-50 px-2 hover:text-gray-200 shadow-md;
 }
 a.default-link {
   @apply no-underline bg-transparent text-gray-50 px-2 hover:text-gray-200 shadow-sm py-1 border-b border-transparent hover:border-blue-50;
 }
+
+h1 {
+  @apply font-bold text-xl;
+}
+h1.main-title {
+  @apply font-bold text-[30px];
+}
+h1.sub-title {
+  @apply font-semibold text-[20px];
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  @apply rounded-[5px] border border-blue-100 px-[5px] py-[3px];
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: solid 4px var(--outline-color);
+}
+
+/* Table */
+
+.basic-table,
+.basic-table th,
+.basic-table td {
+  @apply border-2 border-blue-50 px-3;
+}
+.basic-table thead {
+  @apply bg-blue-50;
+}
+.borderless-table,
+.borderless-table th,
+.borderless-table td {
+  @apply px-3;
+}
+table.borderless-table tfoot {
+  @apply border-t-2 border-gray-200 mt-3;
+}
+table.borderless-table thead {
+  @apply border-b-2 border-gray-200 mt-3;
+}
+
+.hidden-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.hidden-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.hidden-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
 body {
   padding: 0;
+  background-color: #eee;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
